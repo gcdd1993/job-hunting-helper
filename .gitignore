@@ -99,7 +99,6 @@ fabric.properties
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -111,3 +110,4 @@ fabric.properties
 hs_err_pid*
 
 /.idea/
+!/gradle/wrapper/gradle-wrapper.jar
