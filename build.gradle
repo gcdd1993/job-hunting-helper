@@ -20,7 +20,16 @@ repositories {
 }
 
 dependencies {
-    compile 'us.codecraft:webmagic-core:0.7.3'
+    compile 'us.codecraft:xsoup:0.3.0'
+
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.26'
+
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.14.2'
+
+    compile 'cn.afterturn:easypoi-base:3.2.0'
+    compile 'cn.afterturn:easypoi-annotation:3.2.0'
+
+    compile 'org.simplejavamail:simple-java-mail:5.1.7'
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
