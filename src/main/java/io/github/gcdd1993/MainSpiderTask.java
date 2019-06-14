@@ -14,10 +14,9 @@ import org.simplejavamail.mailer.config.TransportStrategy;
 
 import javax.activation.FileDataSource;
 import javax.mail.Message;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -49,10 +48,12 @@ public class MainSpiderTask {
      *
      * @param args 参数列表
      */
-    public static void main(String[] args) {
-        String industry = args[0];
-        String[] cities = args[1].split(",");
-        String[] companies = args[2].split(",");
+    public static void main(String[] args) throws IOException {
+        Properties properties = new Properties();
+        properties.load(new InputStreamReader(MainSpiderTask.class.getResourceAsStream("/config.properties"), "UTF-8"));
+        String industry = properties.getProperty("industry");
+        String[] cities = properties.getProperty("cities").split(",");
+        String[] companies = properties.getProperty("companies").split(",");
 
         StringBuilder sb = new StringBuilder();
         Map<String, List<JobInfo>> jobInfoMap = new HashMap<>(16);
