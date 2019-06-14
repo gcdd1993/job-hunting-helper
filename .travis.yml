@@ -22,4 +22,4 @@ script:
   - cd $HOME/build/distributions/
   - unzip job-hunting-helper-1.0.0.RELEASE.zip
   - chmod +x job-hunting-helper-1.0.0.RELEASE/bin/job-hunting-helper
-  - bash job-hunting-helper-1.0.0.RELEASE/bin/job-hunting-helper
+  - ./job-hunting-helper-1.0.0.RELEASE/bin/job-hunting-helper ${industry} ${cities} ${companies}
